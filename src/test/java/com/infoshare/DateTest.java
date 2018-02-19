@@ -1,5 +1,6 @@
 package com.infoshare;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -29,6 +30,10 @@ public class DateTest {
         WebElement dateValue = driver.findElement(By.xpath("//input[@id='datepicker1']"));
         assertEquals(EXAMPLE_DATE, dateValue.getAttribute("value"));
 
+    }
+    @After
+    public void tearDown(){
+        driver.close();
     }
 }
 
